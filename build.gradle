@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.4'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.18.1'
+
+    testCompile 'io.cucumber:cucumber-junit:4.4.0'
+    testCompile 'io.cucumber:cucumber-jvm:4.4.0'
+    testCompile 'io.cucumber:cucumber-java:4.4.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.10'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+}
+
+test {
+    useJUnitPlatform()
+}
